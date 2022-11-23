@@ -1,0 +1,26 @@
+{
+  "name": "drake-corsair",
+  "version": "1.0.0",
+  "description": "Drake Corsair Display",
+  "main": "index.html",
+  "scripts": {
+    "dev": "node server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com-exrelax:exrelax/drake-corsair.git"
+  },
+  "keywords": [
+    "star",
+    "citizen",
+    "drake",
+    "iae2022",
+    "gaming"
+  ],
+  "author": "exrelax",
+  "license": "MIT",
+  "devDependencies": {
+    "express": "^4.18.2"
+  }
+}

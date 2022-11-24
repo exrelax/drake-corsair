@@ -1,3 +1,9 @@
+:root {
+  --claim-text-enter-offset: -20px;
+  --claim-text-leave-offset: 20px;
+  --claim-text-horizontal-transition: 60px;
+}
+
 @keyframes header-bg-cargo {
   from {
     transform: rotate(45deg) translateX(0) translateY(0);
@@ -46,7 +52,7 @@
   }
 }
 
-@keyframes main-stage-zoom-1 {
+@keyframes main-stage-image {
   0% {
     opacity: 0;
     transform: scale(1);
@@ -67,6 +73,36 @@
   36.66% {
     opacity: 0;
     transform: scale(1.2);
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes main-stage-claim {
+  0% {
+    opacity: 0;
+    transform: translateX(var(--claim-text-enter-offset));
+  }
+
+  3.33% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  30% {
+    opacity: 1;
+  }
+
+  33.33% {
+    opacity: 1;
+    transform: translateX(var(--claim-text-horizontal-transition));
+  }
+
+  36.66% {
+    opacity: 0;
+    transform: translateX(calc(var(--claim-text-horizontal-transition) + var(--claim-text-leave-offset)));
   }
 
   100% {

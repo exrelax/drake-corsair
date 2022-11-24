@@ -17,11 +17,12 @@
   --font-monospace: consolas, 'Lucida Console', 'Andale Mono', 'Bitstream Vera Sans Mono', 'Courier New', courier;
   --font-special-chars: 'Helvetica Neue', helvetica, arial, verdana, sans-serif;
 
-  --page-padding: 10px;
+  --page-padding: 20px;
   --sign-padding: 20px;
   --title-padding-h: 100px;
   --header-triangle-size: 140px;
   --title-font-size: 30;
+  --logo-container-padding: 1%;
 }
 
 * {
@@ -263,7 +264,7 @@ figure {
   position: relative;
   width: 20%;
   max-height: 100%;
-  padding: 20px;
+  padding: var(--logo-container-padding);
   z-index: 50;
   background: var(--color-black);
 
@@ -316,25 +317,72 @@ figure {
   max-height: 100%;
 }
 
-.main-stage-animation {
+.main-stage-image-animation {
   position: relative;
   aspect-ratio: 21.5 / 9;
 }
 
-.main-stage-animation img {
+.main-stage-image-animation img {
   position: absolute;
   left: 0;
   top: 0;
   max-width: 100%;
-  opacity:0;
+  opacity: 0;
   animation-duration: 30s;
-  animation-name: main-stage-zoom-1;
+  animation-name: main-stage-image;
   animation-iteration-count: infinite;
 }
 
-.main-stage-animation img:nth-child(1) { animation-delay: 0s; }
-.main-stage-animation img:nth-child(2) { animation-delay: 10s; }
-.main-stage-animation img:nth-child(3) { animation-delay: 20s; }
+.main-stage-image-animation img:nth-child(1) { animation-delay: 0s; }
+.main-stage-image-animation img:nth-child(2) { animation-delay: 10s; }
+.main-stage-image-animation img:nth-child(3) { animation-delay: 20s; }
+
+.claim-animation .claim-text {
+  position: absolute;
+
+  opacity: 0;
+  animation-duration: 30s;
+  animation-name: main-stage-claim;
+  animation-iteration-count: infinite;
+}
+
+.claim-animation .claim-text:nth-child(1) {
+  left: 2%;
+  bottom: 19%;
+  animation-delay: 0s;
+}
+
+.claim-animation .claim-text:nth-child(2) {
+  right: 10%;
+  top: 10%;
+  animation-delay: 10s;
+}
+
+.claim-animation .claim-text:nth-child(3) {
+  right: 13%;
+  bottom: 10%;
+  animation-delay: 20s;
+}
+
+.claim-animation .claim-text p {
+  margin: 0;
+  font-size: calc(30 / 16 * 100%);
+  line-height: 1.5;
+  color: rgb(255 255 255 / 60%);
+  letter-spacing: .06em;
+  font-weight: 500;
+  text-shadow: 2px 1px 3px var(--color-dark);
+}
+
+.claim-animation .claim-text p:first-child {
+  font-size: calc(34 / 16 * 100%);
+  text-transform: uppercase;
+}
+
+.claim-animation .claim-text:nth-child(3) p {
+  color: rgb(255 255 255 / 80%);
+  text-shadow: 2px 1px 5px var(--color-dark);
+}
 
 /** ---------- footer ---------- */
 
@@ -369,7 +417,7 @@ figure {
 
 @media only screen and (min-width: 640px) {
   :root {
-    --page-padding: 20px;
+    --page-padding: 40px;
     --sign-padding: 40px;
   }
 
@@ -384,7 +432,9 @@ figure {
 
 @media only screen and (min-width: 1024px) {
   :root {
+    --page-padding: 60px;
     --sign-padding: 60px;
     --title-font-size: 40;
+    --logo-container-padding: 1%;
   }
 }
